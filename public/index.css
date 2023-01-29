@@ -1,0 +1,19 @@
+body{
+    margin: 2rem 0;
+}
+
+.title{
+    font-size: 4rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.movies-principal__individual{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.movies-individual{
+    display: flex;
+    justify-content: left;
+    gap: 1rem;
+}
