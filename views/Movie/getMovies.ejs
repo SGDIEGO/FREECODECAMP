@@ -1,0 +1,41 @@
+<%- include("../shared/header") %>
+    <h1>MOVIE LIST</h1>
+
+    <div class="movies">
+
+        <div class="movies-principal">
+            <% movies.forEach(element=> {%>
+                <div class="movies-principal__individual">
+                    <div>
+                        <h3>
+                            <%= element._name %>
+                        </h3>
+                        <div class="movies-individual">
+                            <p>
+                                <%= element._createdOn %>
+                            </p>
+                            <p>
+                                <%= element._gener %>
+                            </p>
+                            <p>
+                                <%= element._time %>
+                            </p>
+                            <p>
+                                <strong>
+                                    <%= element._director %>
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="movies-info">
+                        <a href="Movie/edit/<%= element._id %>" class="btn btn-secondary">Edit</a>
+                        <a href="Movie/info/<%= element._id %>" class="btn btn-info">Info</a>
+                        <a href="Movie/delete/<%= element._id %>" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+
+    </div>
+
+    <%- include("../shared/footer") %>

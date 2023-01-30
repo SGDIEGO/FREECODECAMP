@@ -1,5 +1,6 @@
+const bodyParser = require('body-parser');
 const express = require('express');
-const MovieRouter = require('../routes/Movie/index.js');
+const MoviesRouter = require('../routes/Movies.routes.js');
 
 const server = express();
 
@@ -9,8 +10,9 @@ server.set('view engine', 'ejs');
 
 // Add middlewares
 server.use(express.static('./public'));
+server.use(bodyParser.urlencoded({extended: false}));
 
 // Add Pages
-server.use('/movie', MovieRouter);
+server.use('/Movie', MoviesRouter);
 
 module.exports = server;
