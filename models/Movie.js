@@ -1,18 +1,18 @@
 class Movie {
-    _id
-    _name
-    _createdOn
-    _gener
-    _time
-    _director
+    id
+    name
+    createdOn
+    gener
+    time
+    director
 
     constructor(id, name, createdOn, gener, time, director) {
-        this._id = id
-        this._name = name;
-        this._createdOn = createdOn;
-        this._gener = gener;
-        this._time = time;
-        this._director = director;
+        this.id = id
+        this.name = name;
+        this.createdOn = createdOn;
+        this.gener = gener;
+        this.time = time;
+        this.director = director;
     }
 }
 

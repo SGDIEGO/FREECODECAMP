@@ -4,33 +4,33 @@
     <div class="movies">
 
         <div class="movies-principal">
-            <% movies.forEach(element=> {%>
+            <% listMovies.forEach(element=> {%>
                 <div class="movies-principal__individual">
                     <div>
                         <h3>
-                            <%= element._name %>
+                            <%= element.name %>
                         </h3>
                         <div class="movies-individual">
                             <p>
-                                <%= element._createdOn %>
+                                <%= element.createdOn %>
                             </p>
                             <p>
-                                <%= element._gener %>
+                                <%= element.gener %>
                             </p>
                             <p>
-                                <%= element._time %>
+                                <%= element.time %>
                             </p>
                             <p>
                                 <strong>
-                                    <%= element._director %>
+                                    <%= element.director %>
                                 </strong>
                             </p>
                         </div>
                     </div>
                     <div class="movies-info">
-                        <a href="Movie/edit/<%= element._id %>" class="btn btn-secondary">Edit</a>
-                        <a href="Movie/info/<%= element._id %>" class="btn btn-info">Info</a>
-                        <a href="Movie/delete/<%= element._id %>" class="btn btn-danger">Delete</a>
+                        <a href="Movie/edit/<%= element.id %>" class="btn btn-secondary">Edit</a>
+                        <a href="Movie/info/<%= element.id %>" class="btn btn-info">Info</a>
+                        <a href="Movie/delete/<%= element.id %>" class="btn btn-danger">Delete</a>
                     </div>
                 </div>
                 <% }); %>

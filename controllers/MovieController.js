@@ -13,7 +13,7 @@ let listMovies = [
 // GET
 function getMovies(req, res) {
     res.render(`${PATHVIEW}getMovies.ejs`, {
-        movies: listMovies
+        listMovies
     })
 }
 
@@ -21,7 +21,8 @@ function getMovies(req, res) {
 function editMoviesGet(req, res) {
     let {id} = req.params;
     res.render(`${PATHVIEW}editMovies.ejs`, {
-        movieById: listMovies[id-1]
+        ...listMovies[id-1],
+        error: false
     })
 }
 
@@ -33,7 +34,23 @@ function editMoviesPost(req, res) {
     
     listMovies[id-1] = updateMovie;
     res.redirect('/movie');
-
 }
 
-module.exports = { getMovies, editMoviesGet, editMoviesPost}
+// GET
+function deleteMovieGet(req, res) {
+    let {id} = req.params;
+    res.render(`${PATHVIEW}deleteMovies.ejs`, {
+        ...listMovies[id-1],
+        error: false
+    })
+}
+
+// POST
+function deleteMoviePost(req, res) {
+    let {id} = req.params;
+    delete listMovies[id-1];
+
+    res.redirect('/movie');
+}
+
+module.exports = { getMovies, editMoviesGet, editMoviesPost, deleteMovieGet, deleteMoviePost}
